@@ -1,17 +1,27 @@
 
-public class Main extends UserInput {
+public class main extends UserInput {
+
 	public static void main(String[] args) {
-		System.out.println("Type the numbers you'd like to add recursively: ");
+		System.out.println("Enter the numbers you would like to add: ");
 		int min = getInt();
+		System.out.println("Great! Now enter the second number: ");
 		int max = getInt();
-		System.out.println(sumInt(min, max));
-		
+		System.out.println(sumInts(min, max));
 	}
-	//method to recursively add the numbers passed via the getInt method in UserInput. 
-	public static int sumInt(int start, int end) {
-		if(start > end)
+
+	public static int sumInts(int start, int end)  {
+		if (end >= start) {
+        		 return end + sumInts(start, end - 1);
+		}
+		/*else if (start > end){
+			int temp1, temp2;
+			temp1 = end;
+			temp2 = start;
+			
+			return sumInts(temp1, temp2);
+		} */
+		else {
 			return 0;
-		else 
-			return start + sumInt(start + 1, end);
+		}
 	}
 }
