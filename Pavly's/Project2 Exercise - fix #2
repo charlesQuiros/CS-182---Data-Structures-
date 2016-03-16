@@ -1,0 +1,29 @@
+public class main extends UserInput {
+
+	public static void main(String[] args) {
+		System.out.println("Enter the numbers you would like to add: ");
+		int min = getInt();
+		System.out.println("Great! Now enter the second number: ");
+		int max = getInt();
+		
+		if (min < max) {
+			System.out.println(sumInts(min, max));
+		}
+		else {
+			int temp1, temp2;
+			temp1 = max;
+			temp2 = min;
+			System.out.println(sumInts(temp1, temp2));
+		}
+		
+		
+	}
+
+	public static int sumInts(int start, int end)  {
+		if (end >= start) {
+           return end + sumInts(start, end - 1);
+		}	
+		else
+			return 0;
+	}
+}
